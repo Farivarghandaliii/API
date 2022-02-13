@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220213 23:05:42.763" rpa="false" schemaversion="2">
+<suite id="s1" name="S2Edited" source="E:\Project-School\API-Project\APITest\Testcase\s2edited.robot">
+<test id="s1-t1" name="TC2_Post_Request">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>AddData</arg>
+<arg>${API_Base}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220213 23:05:43.226" level="INFO">Creating Session using : alias=AddData, url=https://reqres.in/api/users, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220213 23:05:43.225" endtime="20220213 23:05:43.226"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=morpheus</arg>
+<arg>job=leader</arg>
+<arg>id=400</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220213 23:05:43.227" level="INFO">${body} = {'name': 'morpheus', 'job': 'leader', 'id': '400'}</msg>
+<status status="PASS" starttime="20220213 23:05:43.226" endtime="20220213 23:05:43.227"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json; charset=utf-8</arg>
+<arg>Accept=application/json;charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220213 23:05:43.227" level="INFO">${header} = {'Content-Type': 'application/json; charset=utf-8', 'Accept': 'application/json;charset=utf-8'}</msg>
+<status status="PASS" starttime="20220213 23:05:43.227" endtime="20220213 23:05:43.227"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>AddData</arg>
+<arg>api/users</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220213 23:05:43.923" level="INFO">POST Request : url=https://reqres.in/api/users/api/users 
+ path_url=/api/users/api/users 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '31', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=morpheus&amp;job=leader&amp;id=400 
+ </msg>
+<msg timestamp="20220213 23:05:43.923" level="INFO">POST Response : url=https://reqres.in/api/users/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Sun, 13 Feb 2022 07:33:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '84', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"54-sxosxLEoT6R/K99Mqn3SIYaXdGA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=vMQwzPpPjvF7XNfVoWgiKYLd7YgqOZHJNsWJiqXcrdROavvc5Xg%2Fkqv7DxcwDUUJYicT2l0B6IyFUgs9ddxoreRO9OnSO1BwiKko%2FgcLWgaiMl7%2B4fFuaF%2FhWnIN3r3izT6rNnFdsMg%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6dcc5e756fb4066a-LHR', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"name":"morpheus","job":"leader","id":"400","createdAt":"2022-02-13T07:33:31.133Z"} 
+ </msg>
+<msg timestamp="20220213 23:05:43.923" level="INFO">C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220213 23:05:43.925" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220213 23:05:43.228" endtime="20220213 23:05:43.925"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220213 23:05:43.926" endtime="20220213 23:05:43.928"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220213 23:05:43.928" endtime="20220213 23:05:43.929"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${code}</var>
+<arg>${Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220213 23:05:43.931" level="INFO">${code} = 201</msg>
+<status status="PASS" starttime="20220213 23:05:43.929" endtime="20220213 23:05:43.931"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220213 23:05:43.931" endtime="20220213 23:05:43.931"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${JobValue}</var>
+<arg>${response.json()}</arg>
+<arg>$.job</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220213 23:05:43.958" level="INFO">${JobValue} = ['leader']</msg>
+<status status="PASS" starttime="20220213 23:05:43.931" endtime="20220213 23:05:43.958"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${JobValue}</var>
+<arg>${JobValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220213 23:05:43.960" level="INFO">${JobValue} = ['leader']</msg>
+<status status="PASS" starttime="20220213 23:05:43.959" endtime="20220213 23:05:43.960"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${JobValue}</arg>
+<arg>['leader']</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220213 23:05:43.960" endtime="20220213 23:05:43.960"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${NameValue}</var>
+<arg>${response.json()}</arg>
+<arg>$.name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220213 23:05:43.981" level="INFO">${NameValue} = ['morpheus']</msg>
+<status status="PASS" starttime="20220213 23:05:43.961" endtime="20220213 23:05:43.981"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${NameValue}</var>
+<arg>${NameValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220213 23:05:43.983" level="INFO">${NameValue} = ['morpheus']</msg>
+<status status="PASS" starttime="20220213 23:05:43.983" endtime="20220213 23:05:43.983"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${NameValue}</arg>
+<arg>['morpheus']</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220213 23:05:43.984" endtime="20220213 23:05:43.984"/>
+</kw>
+<status status="PASS" starttime="20220213 23:05:43.225" endtime="20220213 23:05:43.984"/>
+</test>
+<status status="PASS" starttime="20220213 23:05:42.765" endtime="20220213 23:05:43.985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="S2Edited">S2Edited</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220213 23:05:43.025" level="ERROR">Error in file 'E:\Project-School\API-Project\APITest\Testcase\s2edited.robot' on line 3: Importing library 'RESTinstance' failed: ModuleNotFoundError: No module named 'RESTinstance'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310
+  C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+</errors>
+</robot>
