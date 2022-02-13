@@ -9,21 +9,17 @@ ${API_Base}  https://reqres.in/
 
 ***Test Cases***
 TC2_Post_Request
-    create session  AddData  ${API_Base}
+    create session  AddData  ${API_Base}  verify=true
     ${body}  create dictionary  name=morpheus  job=leader  
     ${header}  create dictionary  Content-Type=application/json  Accept=application/json
     ${Response}=  POST On Session  AddData  api/users  data=${body} 
 
-    log to console  ${Response.status_code}
     log to console  ${Response.content}
 
-    ${code}  convert to string  ${Response.status_code}
-    should be equal  ${code}  201
+    should be equal as strings    ${Response.status_code}   201
 
     ${JobValue}=  get value from json  ${response.json()}  $.job
-    ${JobValue}  convert to string   ${JobValue}
-    should be equal  ${JobValue}  ['leader']
+    should be equal as strings  ${JobValue}  ['leader']
 
     ${NameValue}=  get value from json  ${response.json()}  $.name
-    ${NameValue}  convert to string   ${NameValue}
-    should be equal  ${NameValue}  ['morpheus']
+    should be equal as strings  ${NameValue}  ['morpheus']
