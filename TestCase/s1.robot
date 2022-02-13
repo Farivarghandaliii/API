@@ -9,7 +9,7 @@ ${API_Base}   https://gorest.co.in/
 
 *** Test Cases ***
 TC4_GET_Request
-    create session  API_Testing  ${API_Base}
+    create session  API_Testing  ${API_Base}  verify=true
     ${response}=  GET On Session  API_Testing  public/v1/posts/123/comments
     ${header}  create dictionary  Content-Type=application/json   Accept=application/json
 
