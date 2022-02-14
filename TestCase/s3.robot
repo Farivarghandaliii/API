@@ -8,7 +8,7 @@ Library   Collections
 ${API_Base}  https://reqres.in/
 
 ***Test Cases***
-TC2_Post_Request
+TC_Post_Request
     create session  AddData  ${API_Base}  verify=true  
     ${body}  create dictionary  email=sydney@fife
     ${header}  create dictionary  Content-Type=application/json  Accept=application/json
