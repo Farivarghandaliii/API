@@ -8,7 +8,7 @@ Library   Collections
 ${API_Base}  https://reqres.in/
 
 ***Test Cases***
-TC2_Post_Request
+TC_Post_Request
     create session  AddData  ${API_Base}  verify=true
     ${body}  create dictionary  name=morpheus  job=leader  
     ${header}  create dictionary  Content-Type=application/json  Accept=application/json
@@ -18,8 +18,8 @@ TC2_Post_Request
 
     should be equal as strings  ${Response.status_code}  201
 
-    ${JobValue}=  get value from json  ${response.json()}  [job]
+    ${JobValue}=  get value from json  ${response.json()}  $.job
     should be equal as strings  ${JobValue}  ['leader']
 
-    ${NameValue}=  get value from json  ${response.json()}  [name]
+    ${NameValue}=  get value from json  ${response.json()}  $.name
     should be equal as strings  ${NameValue}  ['morpheus']
