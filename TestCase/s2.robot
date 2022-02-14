@@ -10,7 +10,7 @@ ${API_Base}  https://reqres.in/api/users
 ***Test Cases***
 TC2_Post_Request
     create session  AddData  ${API_Base}
-    ${body}  create dictionary  name=morpheus  job=leader   id=400
+    ${body}  create dictionary  name=morpheus  job=leader  
     ${header}  create dictionary  Content-Type=application/json; charset=utf-8  Accept=application/json;charset=utf-8
     ${Response}=  POST On Session  AddData  api/users  data=${body} 
 
