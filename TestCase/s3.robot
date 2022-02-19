@@ -1,5 +1,5 @@
 ***Settings***
-Documentation   A Test Post Request to Checked StatusCode
+Documentation   A Post Request to Checked StatusCode
 Library         RequestsLibrary
 Library         JSONLibrary
 Library         Collections

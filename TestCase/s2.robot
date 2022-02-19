@@ -1,5 +1,5 @@
 ***Settings***
-Documentation   A Test Post Request to Checked Value
+Documentation   A Post Request to Checked Value
 Library         RequestsLibrary
 Library         JSONLibrary
 Library         Collections
