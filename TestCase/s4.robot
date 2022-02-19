@@ -1,9 +1,9 @@
 ***Settings***
 Documentation   A Test Post Request to Update Value
-Library   RequestsLibrary
-Library   JSONLibrary
-Library   Collections
-Library   ../Library/Times.py
+Library         RequestsLibrary
+Library         JSONLibrary
+Library         Collections
+Library         ../Library/Times.py
 
 ***Variables***
 ${API_Base}  https://reqres.in/
