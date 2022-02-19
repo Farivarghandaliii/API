@@ -9,7 +9,7 @@ Library         ../Library/Times.py
 ${API_Base}  https://reqres.in/
 
 ***Test Cases***
-TC_Post_Request
+TC_Post_Request-Update
     create session  AddData  ${API_Base}  verify=true
     ${body}  create dictionary  name=morpheus  job=leader  email=morpheus@gmail.com  
     ${header}  create dictionary  Content-Type=application/json  Accept=application/json
