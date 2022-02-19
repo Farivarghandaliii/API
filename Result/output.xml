@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220219 02:53:39.950" rpa="false" schemaversion="2">
-<suite id="s1" name="S2" source="E:\ArzyabiProject\API\Testcase\S2.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220219 08:31:35.511" rpa="false" schemaversion="2">
+<suite id="s1" name="S2" source="E:\API\Testcase\S2.robot">
 <test id="s1-t1" name="TC_Post_Request">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>AddData</arg>
 <arg>${API_Base}</arg>
 <arg>verify=true</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220219 02:53:40.252" level="INFO">Creating Session using : alias=AddData, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<status status="PASS" starttime="20220219 02:53:40.251" endtime="20220219 02:53:40.252"/>
+<msg timestamp="20220219 08:31:35.838" level="INFO">Creating Session using : alias=AddData, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20220219 08:31:35.838" endtime="20220219 08:31:35.848"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=morpheus</arg>
 <arg>job=leader</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220219 02:53:40.252" level="INFO">${body} = {'name': 'morpheus', 'job': 'leader'}</msg>
-<status status="PASS" starttime="20220219 02:53:40.252" endtime="20220219 02:53:40.252"/>
+<msg timestamp="20220219 08:31:35.849" level="INFO">${body} = {'name': 'morpheus', 'job': 'leader'}</msg>
+<status status="PASS" starttime="20220219 08:31:35.849" endtime="20220219 08:31:35.849"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <arg>Accept=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220219 02:53:40.256" level="INFO">${header} = {'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
-<status status="PASS" starttime="20220219 02:53:40.252" endtime="20220219 02:53:40.256"/>
+<msg timestamp="20220219 08:31:35.849" level="INFO">${header} = {'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220219 08:31:35.849" endtime="20220219 08:31:35.849"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -32,70 +32,70 @@
 <arg>api/users</arg>
 <arg>data=${body}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220219 02:53:41.004" level="INFO">POST Request : url=https://reqres.in/api/users 
+<msg timestamp="20220219 08:31:36.591" level="INFO">POST Request : url=https://reqres.in/api/users 
  path_url=/api/users 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=name=morpheus&amp;job=leader 
  </msg>
-<msg timestamp="20220219 02:53:41.004" level="INFO">POST Response : url=https://reqres.in/api/users 
+<msg timestamp="20220219 08:31:36.591" level="INFO">POST Response : url=https://reqres.in/api/users 
  status=201, reason=Created 
- headers={'Date': 'Fri, 18 Feb 2022 23:24:33 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '84', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"54-WmNAp7bBVwxgFHBmWeuzQSZQsiE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=WwGwUlh9q3TOtve7iWBDuQsX0bOsZ9oC6BywHL4bMEHgpwCpeyLl05iA1Oe%2BRMEFuaFQnmPE2a%2B75WMrbhm0%2BWk4sW3qqyv%2BIRTI%2FO2j64yDPByFNt22%2FejetY4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6dfb027229991c3f-SOF', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body={"name":"morpheus","job":"leader","id":"856","createdAt":"2022-02-18T23:24:33.100Z"} 
+ headers={'Date': 'Sat, 19 Feb 2022 05:02:28 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '83', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"53-T/cCajEbvcAith9vP0EHk4bMKcs"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=NlmCgI70P%2BI0sk1cho1db9P%2FLmLuCr2nc3yrLbkhvPru0nFlfRd6K70cKmA8in3kdjRyGOFVrlfRu6%2FuOKA4HN3ScEw1bPu5UNFPcNfu0xDxeh6bqWP9DZfm0gM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6dfcf1769b4591dd-FRA', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"name":"morpheus","job":"leader","id":"86","createdAt":"2022-02-19T05:02:28.947Z"} 
  </msg>
-<msg timestamp="20220219 02:53:41.004" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220219 02:53:40.258" endtime="20220219 02:53:41.004"/>
+<msg timestamp="20220219 08:31:36.591" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220219 08:31:35.849" endtime="20220219 08:31:36.591"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${Response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220219 02:53:41.005" endtime="20220219 02:53:41.007"/>
+<status status="PASS" starttime="20220219 08:31:36.600" endtime="20220219 08:31:36.601"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${Response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220219 02:53:41.008" level="INFO">Argument types are:
+<msg timestamp="20220219 08:31:36.602" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20220219 02:53:41.008" endtime="20220219 02:53:41.009"/>
+<status status="PASS" starttime="20220219 08:31:36.602" endtime="20220219 08:31:36.602"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${JobValue}</var>
 <arg>${response.json()}</arg>
 <arg>$.job</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220219 02:53:41.041" level="INFO">${JobValue} = ['leader']</msg>
-<status status="PASS" starttime="20220219 02:53:41.010" endtime="20220219 02:53:41.041"/>
+<msg timestamp="20220219 08:31:36.636" level="INFO">${JobValue} = ['leader']</msg>
+<status status="PASS" starttime="20220219 08:31:36.602" endtime="20220219 08:31:36.636"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${JobValue}</arg>
 <arg>['leader']</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220219 02:53:41.043" level="INFO">Argument types are:
+<msg timestamp="20220219 08:31:36.638" level="INFO">Argument types are:
 &lt;class 'list'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20220219 02:53:41.042" endtime="20220219 02:53:41.043"/>
+<status status="PASS" starttime="20220219 08:31:36.636" endtime="20220219 08:31:36.638"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${NameValue}</var>
 <arg>${response.json()}</arg>
 <arg>$.name</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220219 02:53:41.067" level="INFO">${NameValue} = ['morpheus']</msg>
-<status status="PASS" starttime="20220219 02:53:41.043" endtime="20220219 02:53:41.067"/>
+<msg timestamp="20220219 08:31:36.670" level="INFO">${NameValue} = ['morpheus']</msg>
+<status status="PASS" starttime="20220219 08:31:36.638" endtime="20220219 08:31:36.670"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${NameValue}</arg>
 <arg>['morpheus']</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220219 02:53:41.074" level="INFO">Argument types are:
+<msg timestamp="20220219 08:31:36.679" level="INFO">Argument types are:
 &lt;class 'list'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20220219 02:53:41.069" endtime="20220219 02:53:41.074"/>
+<status status="PASS" starttime="20220219 08:31:36.677" endtime="20220219 08:31:36.679"/>
 </kw>
-<status status="PASS" starttime="20220219 02:53:40.251" endtime="20220219 02:53:41.074"/>
+<status status="PASS" starttime="20220219 08:31:35.838" endtime="20220219 08:31:36.681"/>
 </test>
-<status status="PASS" starttime="20220219 02:53:39.952" endtime="20220219 02:53:41.075"/>
+<status status="PASS" starttime="20220219 08:31:35.515" endtime="20220219 08:31:36.684"/>
 </suite>
 <statistics>
 <total>
@@ -108,7 +108,7 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220219 02:53:40.078" level="ERROR">Error in file 'E:\ArzyabiProject\API\Testcase\S2.robot' on line 3: Importing library 'RESTinstance' failed: ModuleNotFoundError: No module named 'RESTinstance'
+<msg timestamp="20220219 08:31:35.672" level="ERROR">Error in file 'E:\API\Testcase\S2.robot' on line 3: Importing library 'RESTinstance' failed: ModuleNotFoundError: No module named 'RESTinstance'
 Traceback (most recent call last):
   None
 PYTHONPATH:
