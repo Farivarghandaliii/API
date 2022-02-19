@@ -1,8 +1,8 @@
 ***Settings***
-Library   RequestsLibrary
-Library   REST
-Library   JSONLibrary
-Library   Collections
+Documentation   A Test Post Request to Checked StatusCode
+Library         RequestsLibrary
+Library         JSONLibrary
+Library         Collections
 
 ***Variables***
 ${API_Base}  https://reqres.in/
@@ -13,4 +13,3 @@ TC_Post_Request
     ${body}  create dictionary  email=sydney@fife
     ${header}  create dictionary  Content-Type=application/json  Accept=application/json
     ${Response}=  POST On Session  AddData  api/register  data=${body}  expected_status=400
-    should be equal as strings  ${Response.status_code}  400
